@@ -1,0 +1,43 @@
+﻿/*centers the body and any elements in it*/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: lightblue;
+}
+
+h1 {
+    background-color: orange;
+    color: white;
+}
+
+/*can be used to center any specific text in an element*/
+.center {
+    text-align: center;
+}
+
+/*keyframe animation used to create a blinking affect*/
+@keyframes blink {
+    0% {
+        opacity: 1; /*at the start of the keyframe, the text is visible*/
+    }
+
+    50% {
+        opacity: 0; /*halfway through the keyframe the text isn't visible*/
+    }
+
+    100% {
+        opacity: 0; /*at the end of the keyfram the text isn't visible*/
+    }
+}
+
+div {
+    color: red;
+}
+
+.blink {
+    animation: blink 0.25s ease-in-out 5;
+}
