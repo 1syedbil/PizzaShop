@@ -11,19 +11,20 @@
 </head>
 <body>
     <h1><b>SET Pizza Shop</b></h1>
-    <form id="form1" runat="server">
+    <form id="orderForm" runat="server">
         <h2 style="text-align:center"><b>Ciao <% Response.Write(Session["firstName"].ToString()); %></b></h2> <br />
         <table border="0" style="text-align:center">
             <tr>
                 <td style="text-align:left;">
                     Please select which toppings you would like on your large pizza:<br />(You can only order 1 and it already comes with cheese and sauce)<br /><br />
-                    <input id="pepperoni" type="checkbox" value="1.50"/> Pepperoni <br />
-                    <input id="mushroom" type="checkbox" value="1.00"/> Mushrooms <br />
-                    <input id="olive" type="checkbox" value="1.00"/> Green Olives <br />
-                    <input id="pepper" type="checkbox" value="1.00"/> Green Peppers <br />
-                    <input id="cheese" type="checkbox" value="2.25"/> Double Cheese <br /><br />
-                    <b>Order Total: <label id="orderTotal">$10.00</label></b> <br /><br />
-                    <input id="submitSelections" type="submit" value="Make It!"/>
+                    <input runat="server" id="pepperoni" type="checkbox" value="1.50"/> Pepperoni <br />
+                    <input runat="server" id="mushroom" type="checkbox" value="1.00"/> Mushrooms <br />
+                    <input runat="server" id="olive" type="checkbox" value="1.00"/> Green Olives <br />
+                    <input runat="server" id="pepper" type="checkbox" value="1.00"/> Green Peppers <br />
+                    <input runat="server" id="cheese" type="checkbox" value="2.25"/> Double Cheese <br /><br />
+                    <b>Order Total: <span runat="server" id="orderTotal">$10</span></b> <br /><br />
+                    <input type="hidden" runat="server" id="priceVal" value="10"/>
+                    <asp:Button runat="server" ID="submitOrder" Text="Make It!" OnClick="submitOrder_Click"/>
                 </td>
             </tr>
         </table>
